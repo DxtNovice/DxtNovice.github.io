@@ -1,0 +1,702 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Markdown基本语法 | 小小水平の博客</title><meta name="author" content="小小水平"><meta name="copyright" content="小小水平"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="【可选】文章描述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown基本语法">
+<meta property="og:url" content="http://example.com/2022/11/24/Markdown%E6%95%99%E7%A8%8B/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="小小水平の博客">
+<meta property="og:description" content="【可选】文章描述">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-24T08:05:03.000Z">
+<meta property="article:modified_time" content="2022-11-24T10:38:03.000Z">
+<meta property="article:author" content="小小水平">
+<meta property="article:tag" content="Markdown教程">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/24/Markdown%E6%95%99%E7%A8%8B/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Markdown基本语法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-24 18:38:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: 【可选】文章顶部图片"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小小水平の博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Markdown基本语法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-24T08:05:03.000Z" title="发表于 2022-11-24 16:05:03">2022-11-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-24T10:38:03.000Z" title="更新于 2022-11-24 18:38:03">2022-11-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Markdown%E6%95%99%E7%A8%8B/">Markdown教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Markdown基本语法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p><strong>前言：</strong></p>
+<ul>
+<li>本文内容来源于<em><strong>Markdown 官方文档</strong></em>，我将其中部分常用内容进行整理，以便查找与学习，更全面的语法请前往<a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">Markdown 官网</a>查看。我使用的编辑器为Typora，如有需要，请前往<a target="_blank" rel="noopener" href="https://typoraio.cn/">Typora官网</a>下载。</li>
+<li>本文内容根据我自己的理解，对部分描述文本做了一些修改，若有出入请以<a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">Markdown 官网</a>为准，欢迎各位的指正。</li>
+</ul>
+</blockquote>
+<h1 id="1-Markdown-介绍"><a href="#1-Markdown-介绍" class="headerlink" title="1. Markdown 介绍"></a>1. Markdown 介绍</h1><ul>
+<li>Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。</li>
+</ul>
+<h1 id="2-Markdown-标题语法"><a href="#2-Markdown-标题语法" class="headerlink" title="2. Markdown 标题语法"></a>2. Markdown 标题语法</h1><ul>
+<li>要创建标题，请在标题文本前面添加井号 (<code>#</code>) 。<code>#</code> 的数量代表了标题的级别。例如，添加三个 <code>#</code> 表示创建一个三级标题 (<code>&lt;h3&gt;</code>) (例如：<code>### My Header</code>)。</li>
+</ul>
+<p>例如：</p>
+<p><strong>二级标题：</strong></p>
+<pre><code>## Heading level 2
+</code></pre>
+<p>预览效果如下：</p>
+<h2 id="Heading-level-2"><a href="#Heading-level-2" class="headerlink" title="Heading level 2"></a>Heading level 2</h2><p><strong>三级标题:</strong></p>
+<pre><code>### Heading level 3
+</code></pre>
+<p>预览效果如下：</p>
+<h3 id="Heading-level-3"><a href="#Heading-level-3" class="headerlink" title="Heading level 3"></a>Heading level 3</h3><p><strong>四级标题：</strong></p>
+<pre><code>#### Heading level 4
+</code></pre>
+<p>预览效果如下：</p>
+<h4 id="Heading-level-4"><a href="#Heading-level-4" class="headerlink" title="Heading level 4"></a>Heading level 4</h4><blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>不同的 Markdown 应用程序处理 <code>#</code> 和标题文本之间的空格方式并不一致。为了兼容考虑，请用一个空格在 <code>#</code> 和标题文本之间进行分隔，例如：<code>#</code>(空格)标题文本。</li>
+</ul>
+</blockquote>
+<h1 id="3-Markdown-段落语法"><a href="#3-Markdown-段落语法" class="headerlink" title="3. Markdown 段落语法"></a>3. Markdown 段落语法</h1><ul>
+<li>要创建段落，请使用空白行将一行或多行文本进行分隔。</li>
+</ul>
+<p>例如：</p>
+<pre><code>I really like using Markdown.
+（空白行）
+I think I&#39;ll use it to format all of my documents from now on.
+</code></pre>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>不要用空格（spaces）或制表符（ tabs）缩进段落。可在段首加上’’<code>-</code>‘’和一个空格，达到缩进的效果。</li>
+</ul>
+</blockquote>
+<h1 id="4-Markdown-换行语法"><a href="#4-Markdown-换行语法" class="headerlink" title="4. Markdown 换行语法"></a>4. Markdown 换行语法</h1><ul>
+<li>在一行的末尾添加两个或多个空格，然后按回车键，即可创建一个换行(<code>&lt;br&gt;</code>)。</li>
+</ul>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>还有一些其它方式也可实现换行，但为了兼容性，请在行尾添加“两个空格”加回车键 或 HTML 的 <code>&lt;br&gt;</code> 标签来实现换行。</li>
+</ul>
+</blockquote>
+<h1 id="5-Markdown-强调语法"><a href="#5-Markdown-强调语法" class="headerlink" title="5. Markdown 强调语法"></a>5. Markdown 强调语法</h1><ul>
+<li>通过将文本设置为粗体或斜体来强调其重要性。</li>
+</ul>
+<h3 id="粗体（Bold）"><a href="#粗体（Bold）" class="headerlink" title="粗体（Bold）"></a>粗体（Bold）</h3><ul>
+<li>要加粗文本，请在单词或短语的前后各添加两个星号“<code>**</code>”或下划线”<code>__</code>“。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号“<code>**</code>”。</li>
+</ul>
+<p>例如：</p>
+<pre><code>I just love **bold text**.
+</code></pre>
+<p>预览效果如下：</p>
+<p>I just love <strong>bold text</strong>.</p>
+<pre><code>I just love __bold text__.
+</code></pre>
+<p>预览效果如下：</p>
+<p>I just love <strong>bold text</strong>.</p>
+<pre><code>Love **is** bold
+</code></pre>
+<p>预览效果如下：</p>
+<p>Love <strong>is</strong> bold</p>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>Markdown 应用程序在如何处理单词或短语中间的下划线”<code>__</code>“上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号“<code>**</code>”。</li>
+</ul>
+</blockquote>
+<h3 id="斜体（Italic）"><a href="#斜体（Italic）" class="headerlink" title="斜体（Italic）"></a>斜体（Italic）</h3><ul>
+<li>要用斜体显示文本，请在单词或短语前后各添加一个星号“<code>*</code>”或下划线”<code>_</code>“。要斜体突出单词或短语的中间部分，请在突出部分前后各添加一个星号“<code>*</code>”。</li>
+</ul>
+<p>例如：</p>
+<pre><code>Italicized text is the *cat&#39;s meow*.
+</code></pre>
+<p>预览效果如下：</p>
+<p>Italicized text is the <em>cat’s meow</em>.</p>
+<pre><code>Italicized text is the _cat&#39;s meow_.
+</code></pre>
+<p>预览效果如下：</p>
+<p>Italicized text is the <em>cat’s meow</em>.</p>
+<pre><code>A *cat* meow
+</code></pre>
+<p>预览效果如下：</p>
+<p>A <em>cat</em> meow</p>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>Markdown 应用程序在如何处理单词或短语中间的下划线”<code>_</code>“上并不一致。为兼容考虑，在单词或短语中间部分使用斜体的话，请使用星号“<code>*</code>”。</li>
+</ul>
+</blockquote>
+<h3 id="粗体（Bold）和斜体（Italic）"><a href="#粗体（Bold）和斜体（Italic）" class="headerlink" title="粗体（Bold）和斜体（Italic）"></a>粗体（Bold）和斜体（Italic）</h3><ul>
+<li>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号“<code>***</code>”或下划线”<code>___</code>“。要加粗并用斜体显示单词或短语的中间部分，请在突出部分前后各添加三个星号“<code>***</code>”，中间不要带空格。</li>
+</ul>
+<p>例如：</p>
+<pre><code>This text is ***really important***.
+</code></pre>
+<p>预览效果如下：</p>
+<p>This text is <em><strong>really important</strong></em>.</p>
+<pre><code>This text is ___really important___.
+</code></pre>
+<p>预览效果如下：</p>
+<p>This text is <em><strong>really important</strong></em>.</p>
+<pre><code>This is really ***very*** important text.
+</code></pre>
+<p>预览效果如下：</p>
+<p>This is really <em><strong>very</strong></em> important text.</p>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>Markdown 应用程序在如何处理单词或短语中间的下划线”<code>___</code>“上并不一致。为兼容考虑，在单词或短语中间部分使用粗体和斜体的话，请使用星号“<code>***</code>”。</li>
+</ul>
+</blockquote>
+<h1 id="6-Markdown-引用语法"><a href="#6-Markdown-引用语法" class="headerlink" title="6. Markdown 引用语法"></a>6. Markdown 引用语法</h1><ul>
+<li>要创建块引用，请在段落前添加一个 <code>&gt;</code> 符号。</li>
+</ul>
+<p>例如：</p>
+<pre><code>&gt;Dorothy followed her through many of the beautiful rooms in her castle.
+</code></pre>
+<p>渲染效果如下：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+</blockquote>
+<h3 id="多个段落的块引用"><a href="#多个段落的块引用" class="headerlink" title="多个段落的块引用"></a>多个段落的块引用</h3><ul>
+<li>块引用可以包含多个段落。为段落之间的空白行添加一个 <code>&gt;</code> 符号。</li>
+</ul>
+<p>例如：</p>
+<pre><code>&gt;Dorothy followed her through many of the beautiful rooms in her castle.
+&gt;
+&gt;The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+</code></pre>
+<p>渲染效果如下：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+<p>The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</p>
+</blockquote>
+<h3 id="嵌套块引用"><a href="#嵌套块引用" class="headerlink" title="嵌套块引用"></a>嵌套块引用</h3><ul>
+<li>块引用可以嵌套。在要嵌套的段落前添加一个 <code>&gt;&gt;</code> 符号。</li>
+</ul>
+<p>例如：</p>
+<pre><code>&gt;Dorothy followed her through many of the beautiful rooms in her castle.
+&gt;
+&gt;&gt;The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+</code></pre>
+<p>渲染效果如下：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+<blockquote>
+<p>The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>块引用可以包含其他 Markdown 格式的元素。例如：<code>#</code>、<code>*</code>、<code>-</code>。</li>
+</ul>
+</blockquote>
+<h1 id="7-Markdown-列表语法"><a href="#7-Markdown-列表语法" class="headerlink" title="7. Markdown 列表语法"></a>7. Markdown 列表语法</h1><ul>
+<li>可以将多个条目组织成有序或无序列表。</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ul>
+<li>要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点“<code>.</code>”。数字不必按数学顺序排列，但是列表应当以数字 1 起始。</li>
+</ul>
+<p>例如：</p>
+<pre><code>1. First item
+2. Second item
+3. Third item
+4. Fourth item
+</code></pre>
+<p>预览效果如下：</p>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+<li>Fourth item</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 .  First item</span><br><span class="line">8 .  Second item </span><br><span class="line">3 .  Third item</span><br><span class="line">5 .  Fourth item</span><br></pre></td></tr></table></figure>
+
+<p>预览效果如下：</p>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+<li>Fourth item</li>
+</ol>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>一些其他的编辑器允许使用 “)” 作为分隔符（例如： 1) First item ），但并非所有Markdown应用程序都支持这一点，为兼容考虑，推荐只使用英文句点“<code>.</code>”。</li>
+</ul>
+</blockquote>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
+<li>要创建无序列表，请在每个列表项前面添加破折号’’<code>-</code>‘’、星号’’<code>*</code>‘’或加号’’<code>+</code>‘’。</li>
+</ul>
+<p>例如：</p>
+<pre><code>- First item
+- Second item
+- Third item
+- Fourth item
+</code></pre>
+<p>预览效果如下：</p>
+<ul>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+<li>Fourth item</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* First item</span><br><span class="line">* Second item</span><br><span class="line">* Third item</span><br><span class="line">* Fourth item</span><br></pre></td></tr></table></figure>
+
+<p>预览效果如下：</p>
+<ul>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+<li>Fourth item</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ First item</span><br><span class="line">+ Second item</span><br><span class="line">+ Third item</span><br><span class="line">+ Fourth item</span><br></pre></td></tr></table></figure>
+
+<p>预览效果如下：</p>
+<ul>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+<li>Fourth item</li>
+</ul>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>Markdown应用程序不支持处理同一无序列表中的不同分隔符。为兼容考虑，请在同一列表中使用同一种分隔符（’’<code>-</code>‘’、’’<code>*</code>‘’、’’<code>+</code>‘’）。</li>
+</ul>
+</blockquote>
+<h3 id="在列表中嵌套其他元素"><a href="#在列表中嵌套其他元素" class="headerlink" title="在列表中嵌套其他元素"></a>在列表中嵌套其他元素</h3><ul>
+<li>要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符。（例如：<strong>段落、引用块、代码块、图片、列表</strong>）</li>
+</ul>
+<h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><pre><code>* This is the first list item.
+* Here&#39;s the second list item.
+    I need to add another paragraph below the second list item.
+* And here&#39;s the third list item.
+</code></pre>
+<p>渲染效果如下：</p>
+<ul>
+<li>This is the first list item.</li>
+<li>Here’s the second list item.<br>  I need to add another paragraph below the second list item.</li>
+<li>And here’s the third list item.</li>
+</ul>
+<h4 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h4><pre><code>* This is the first list item.
+* Here&#39;s the second list item.
+    &gt;A blockquote would look great below the second list item.
+* And here&#39;s the third list item.
+</code></pre>
+<p>渲染效果如下：</p>
+<ul>
+<li>This is the first list item.</li>
+<li>Here’s the second list item.<blockquote>
+<p>A blockquote would look great below the second list item.</p>
+</blockquote>
+</li>
+<li>And here’s the third list item.</li>
+</ul>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><ul>
+<li>代码块通常采用四个空格或一个制表符缩进。当它们被放在列表中时，请将它们缩进八个空格或两个制表符。</li>
+</ul>
+<ol>
+<li><p>Open the file.</p>
+</li>
+<li><p>Find the following code block on line 21:</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Test&lt;/title&gt;
+  &lt;/head&gt;
+</code></pre>
+</li>
+<li><p>Update the title to match the name of your website.</p>
+</li>
+</ol>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><pre><code>1.  Open the file containing the Linux mascot.
+2.  Marvel at its beauty.`
+    ![Tux](images/tux.png)
+3.  Close the file.
+</code></pre>
+<p>渲染效果如下：</p>
+<ol>
+<li><p>Open the file containing the Linux mascot.</p>
+</li>
+<li><p>Marvel at its beauty.</p>
+<p><img src="/images/tux.png" alt="Tux"></p>
+</li>
+<li><p>Close the file.</p>
+</li>
+</ol>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><ul>
+<li>您可以将无序列表嵌套在有序列表中，反之亦然。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. First item</span><br><span class="line">2. Second item</span><br><span class="line">3. Third item</span><br><span class="line">    - Indented item</span><br><span class="line">    - Indented item</span><br><span class="line">4. Fourth item</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item<ul>
+<li>Indented item</li>
+<li>Indented item</li>
+</ul>
+</li>
+<li>Fourth item</li>
+</ol>
+<h1 id="8-Markdown-代码语法"><a href="#8-Markdown-代码语法" class="headerlink" title="8. Markdown 代码语法"></a>8. Markdown 代码语法</h1><ul>
+<li>要将单词或短语表示为代码，请将其包裹在反引号 <code>`</code> 中。</li>
+</ul>
+<p>例如：</p>
+<pre><code>At the command prompt, type `nano`.
+</code></pre>
+<p>预览效果如下：</p>
+<p>At the command prompt, type <code>nano</code>.</p>
+<h3 id="转义反引号"><a href="#转义反引号" class="headerlink" title="转义反引号"></a>转义反引号</h3><ul>
+<li>如果你要表示为代码的单词或短语中包含一个或多个反引号，则可以将单词或短语包裹在双反引号( <code>``</code> )中。</li>
+</ul>
+<p>例如：</p>
+<pre><code>`` Use `code` in your Markdown file. ``
+</code></pre>
+<p>效果如下：</p>
+<p><code>Use `code` in your Markdown file.</code></p>
+<h3 id="代码块-1"><a href="#代码块-1" class="headerlink" title="代码块"></a>代码块</h3><ul>
+<li>要创建代码块，请将代码块的每一行缩进至少四个空格或一个制表符。</li>
+</ul>
+<p>例如：</p>
+<pre><code>    &lt;html&gt;
+      &lt;head&gt;
+      &lt;/head&gt;
+    &lt;/html&gt;
+</code></pre>
+<p>预览效果如下：</p>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>若要创建不用缩进的代码块，请使用 <a target="_blank" rel="noopener" href="https://markdown.com.cn/extended-syntax/fenced-code-blocks.html">围栏式代码块（fenced code blocks）</a>.</li>
+</ul>
+</blockquote>
+<h1 id="9-Markdown-分隔线语法"><a href="#9-Markdown-分隔线语法" class="headerlink" title="9. Markdown 分隔线语法"></a>9. Markdown 分隔线语法</h1><ul>
+<li>要创建分隔线，请在单独一行上使用三个或多个星号 (<code>***</code>)、破折号 (<code>---</code>) 或下划线 (<code>___</code>) ，并且不能包含其他内容。</li>
+</ul>
+<p>例如：</p>
+<pre><code>***
+
+---
+
+___
+</code></pre>
+<p>渲染效果如下（三种都一样）：</p>
+<hr>
+<hr>
+<hr>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>为了兼容性，请在分隔线的上下均添加空白行。</li>
+</ul>
+</blockquote>
+<h1 id="10-Markdown-链接语法"><a href="#10-Markdown-链接语法" class="headerlink" title="10. Markdown 链接语法"></a>10. Markdown 链接语法</h1><ul>
+<li><p>链接文本放在中括号内，链接地址放在后面的圆括号中，链接title可选（链接title是指当鼠标悬停在超链接上时，显示的文本信息，可以不填）。</p>
+<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
+<p>对应的HTML代码：<code>&lt;a href=&quot;超链接地址&quot; title=&quot;超链接title&quot;&gt;超链接显示名&lt;/a&gt;</code></p>
+</li>
+</ul>
+<p>例如：</p>
+<pre><code>这是一个链接 [小小水平の博客](https://dxtnovice.github.io/ &quot;个人博客&quot;)。
+</code></pre>
+<p>预览效果如下：</p>
+<p>这是一个链接 <a target="_blank" rel="noopener" href="https://dxtnovice.github.io/" title="个人博客">小小水平の博客</a>。</p>
+<h3 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h3><ul>
+<li>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</li>
+</ul>
+<p>例如：</p>
+<pre><code>&lt;https://markdown.com.cn&gt;
+&lt;fake@example.com&gt;
+</code></pre>
+<p>渲染效果如下：</p>
+<p><a target="_blank" rel="noopener" href="https://markdown.com.cn/">https://markdown.com.cn</a><br><a href="mailto:&#x66;&#x61;&#107;&#x65;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x66;&#x61;&#107;&#x65;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p>
+<h3 id="带格式化的链接"><a href="#带格式化的链接" class="headerlink" title="带格式化的链接"></a>带格式化的链接</h3><ul>
+<li>强调链接, 在链接语法前后添加星号。 若要将链接表示为代码，请在方括号中添加反引号<code>`</code>。</li>
+</ul>
+<p>例如：</p>
+<pre><code>I love supporting the **[EFF](https://eff.org)**.
+
+This is the *[Markdown Guide](https://www.markdownguide.org)*.
+
+See the section on [`code`](#code).
+</code></pre>
+<p>渲染效果如下：</p>
+<p>I love supporting the <strong><a target="_blank" rel="noopener" href="https://eff.org/">EFF</a></strong>.</p>
+<p>This is the <em><a target="_blank" rel="noopener" href="https://www.markdownguide.org/">Markdown Guide</a></em>.</p>
+<p>See the section on <a href="#code"><code>code</code></a>.</p>
+<h3 id="引用类型链接"><a href="#引用类型链接" class="headerlink" title="引用类型链接"></a>引用类型链接</h3><ul>
+<li>引用类型链接是一种特殊的链接，将正常的超链接语法代码 <code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code> 拆分成两部分；在第一部分 <code>[超链接显示名]</code> 后面添加一组方括号并在其中填写标签；在第二部分 <code>(超链接地址 &quot;超链接title&quot;)</code> 前面添加一组方括号，其后紧跟一个冒号和至少一个空格，并在方括号中填写与第一部分相同的标签；以上步骤就形成了引用类型链接。</li>
+<li>链接的第二部分可以放在Markdown文档中的任何位置，有些人将它放在出现的段落之后，有些人则将它放在文档的末尾（例如尾注或脚注）。</li>
+<li>链接的第一部分与第二部分最好单独占一行，以免出现兼容性问题。</li>
+</ul>
+<p>例如：</p>
+<p>第一部分格式为：</p>
+<pre><code>[小小水平の博客][1]
+</code></pre>
+<p>第二部分格式为：</p>
+<pre><code>[1]: https://dxtnovice.github.io/ &quot;个人博客&quot;
+</code></pre>
+<p>渲染效果如下（与正常链接效果相同）：</p>
+<p><a target="_blank" rel="noopener" href="https://dxtnovice.github.io/" title="个人博客">小小水平の博客</a></p>
+<h1 id="11-Markdown-图片语法"><a href="#11-Markdown-图片语法" class="headerlink" title="11. Markdown 图片语法"></a>11. Markdown 图片语法</h1><ul>
+<li><p>要添加图像，请使用感叹号 (<code>!</code>)，其后紧跟一组方括号，在方括号内填写替代文本，图片地址链接放在圆括号里，地址后面可以增加一个可选的”图片title”。</p>
+</li>
+<li><p>插入图片Markdown语法代码：<code>![图片替代文本](图片地址链接 &quot;图片title&quot;)</code>。</p>
+<p>对应的HTML代码：<code>&lt;img src=&quot;图片地址链接&quot; alt=&quot;图片替代文本&quot; title=&quot;图片title&quot;&gt;</code></p>
+</li>
+</ul>
+<p>例如：</p>
+<pre><code>![这是图片](images/tux.png &quot;测试图片&quot;)
+</code></pre>
+<p>渲染效果如下：</p>
+<p><img src="/images/tux.png" alt="这是图片" title="测试图片"></p>
+<h3 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h3><ul>
+<li>要给图片增加可点击并跳转的链接，请将图片的Markdown代码括在方括号中，然后将跳转链接添加在后面的圆括号中。</li>
+</ul>
+<p>例如：</p>
+<pre><code>[![这是图片](images/tux.png &quot;测试图片&quot;)](https://dxtnovice.github.io/)
+</code></pre>
+<p>渲染效果如下（点击图片跳转到圆括号中的链接）：</p>
+<p><a target="_blank" rel="noopener" href="https://dxtnovice.github.io/"><img src="/images/tux.png" alt="这是图片" title="测试图片"></a></p>
+<h1 id="12-Markdown-转义字符语法"><a href="#12-Markdown-转义字符语法" class="headerlink" title="12. Markdown 转义字符语法"></a>12. Markdown 转义字符语法</h1><ul>
+<li>转义字符 <code>\</code> 的作用是让一些字符失去原本的效果 ，称为转义。</li>
+<li>比如 <code>*</code> 原本的作用是将文本设置为斜体，当在前面加上转义字符 <code>\</code> 后，就会让 <code>*</code> 失去作用，从而以文本的方式显示。</li>
+</ul>
+<p>例如：</p>
+<pre><code>\*测试文本1*
+\# 测试文本2
+</code></pre>
+<p>渲染效果如下：</p>
+<p>*测试文本1*<br># 测试文本2</p>
+<h3 id="可做转义的字符"><a href="#可做转义的字符" class="headerlink" title="可做转义的字符"></a>可做转义的字符</h3><ul>
+<li>以下列出的字符都可以通过使用转义字符 <code>\</code> 从而达到转义目的。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\</td>
+<td>backslash</td>
+</tr>
+<tr>
+<td>&#96;</td>
+<td>backtick (see also escaping backticks in code)</td>
+</tr>
+<tr>
+<td>*</td>
+<td>asterisk</td>
+</tr>
+<tr>
+<td>_</td>
+<td>underscore</td>
+</tr>
+<tr>
+<td>{ }</td>
+<td>curly braces</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>brackets</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>parentheses</td>
+</tr>
+<tr>
+<td>#</td>
+<td>pound sign</td>
+</tr>
+<tr>
+<td>+</td>
+<td>plus sign</td>
+</tr>
+<tr>
+<td>-</td>
+<td>minus sign (hyphen)</td>
+</tr>
+<tr>
+<td>.</td>
+<td>dot</td>
+</tr>
+<tr>
+<td>!</td>
+<td>exclamation mark</td>
+</tr>
+<tr>
+<td>|</td>
+<td>pipe (see also escaping pipe in tables)</td>
+</tr>
+</tbody></table>
+<h1 id="13-Markdown-内嵌-HTML-标签"><a href="#13-Markdown-内嵌-HTML-标签" class="headerlink" title="13. Markdown 内嵌 HTML 标签"></a>13. Markdown 内嵌 HTML 标签</h1><ul>
+<li>对于 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML 本身。如需使用 HTML，不需要额外标注这是 HTML 或是 Markdown，只需 HTML 标签添加到 Markdown 文本中即可。</li>
+</ul>
+<h3 id="行级內联标签"><a href="#行级內联标签" class="headerlink" title="行级內联标签"></a>行级內联标签</h3><ul>
+<li><p>HTML 的行级內联标签如 <code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code> 不受限制，可以在 Markdown 的段落、列表或是标题里任意使用。依照个人习惯，甚至可以不用 Markdown 格式，而采用 HTML 标签来格式化。例如：如果比较喜欢 HTML 的 <code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code> 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图片语法。当你需要更改元素的属性时（例如为文本指定颜色或更改图像的宽度），使用 HTML 标签更方便些。</p>
+</li>
+<li><p>HTML 行级內联标签和区块标签不同，在內联标签的范围内， Markdown 的语法是可以解析的。</p>
+</li>
+</ul>
+<p>例如：</p>
+<p><code>This **word** is bold. This &lt;em&gt;word&lt;/em&gt; is italic.</code></p>
+<p>渲染效果如下:</p>
+<p>This <strong>word</strong> is bold. This <em>word</em> is italic.</p>
+<h3 id="区块标签"><a href="#区块标签" class="headerlink" title="区块标签"></a>区块标签</h3><ul>
+<li>区块元素──比如 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code> 等标签，必须在前后加上空行，以便于内容区分。而且这些元素的开始与结尾标签，不可以用 tab 或是空白来缩进。Markdown 会自动识别这区块元素，避免在区块标签前后加上没有必要的 <code>&lt;p&gt;</code> 标签。</li>
+</ul>
+<p>例如，在 Markdown 文件里加上一段 HTML 表格：</p>
+<pre><code>This is a regular paragraph.
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Foo&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+This is another regular paragraph.
+</code></pre>
+<p>渲染效果如下：</p>
+<p>This is a regular paragraph.</p>
+<table>
+    <tr>
+        <td>Foo</td>
+    </tr>
+</table>
+
+<p>This is another regular paragraph.</p>
+<p>请注意，在 HTML 块级标签内不能使用 Markdown 语法。例如在 <code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code> 中的<code>**bold**</code>将不起作用。</p>
+<blockquote>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>出于安全原因，并非所有 Markdown 应用程序都支持在 Markdown 文档中添加 HTML。如有疑问，请查看相应 Markdown 应用程序的手册。某些应用程序只支持 HTML 标签的子集。</li>
+</ul>
+</blockquote>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">小小水平</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/11/24/Markdown%E6%95%99%E7%A8%8B/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">http://example.com/2022/11/24/Markdown%E6%95%99%E7%A8%8B/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">小小水平の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Markdown%E6%95%99%E7%A8%8B/">Markdown教程</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/11/20/hello-world/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小小水平</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Markdown-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">1. Markdown 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Markdown-%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2. Markdown 标题语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Heading-level-2"><span class="toc-number">2.1.</span> <span class="toc-text">Heading level 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Heading-level-3"><span class="toc-number">2.1.1.</span> <span class="toc-text">Heading level 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Heading-level-4"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">Heading level 4</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Markdown-%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">3. Markdown 段落语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Markdown-%E6%8D%A2%E8%A1%8C%E8%AF%AD%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">4. Markdown 换行语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-Markdown-%E5%BC%BA%E8%B0%83%E8%AF%AD%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">5. Markdown 强调语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%97%E4%BD%93%EF%BC%88Bold%EF%BC%89"><span class="toc-number">5.0.1.</span> <span class="toc-text">粗体（Bold）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%9C%E4%BD%93%EF%BC%88Italic%EF%BC%89"><span class="toc-number">5.0.2.</span> <span class="toc-text">斜体（Italic）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%97%E4%BD%93%EF%BC%88Bold%EF%BC%89%E5%92%8C%E6%96%9C%E4%BD%93%EF%BC%88Italic%EF%BC%89"><span class="toc-number">5.0.3.</span> <span class="toc-text">粗体（Bold）和斜体（Italic）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Markdown-%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">6. Markdown 引用语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E6%AE%B5%E8%90%BD%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="toc-number">6.0.1.</span> <span class="toc-text">多个段落的块引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%9D%97%E5%BC%95%E7%94%A8"><span class="toc-number">6.0.2.</span> <span class="toc-text">嵌套块引用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-Markdown-%E5%88%97%E8%A1%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">7.</span> <span class="toc-text">7. Markdown 列表语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">7.0.1.</span> <span class="toc-text">有序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">7.0.2.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%88%97%E8%A1%A8%E4%B8%AD%E5%B5%8C%E5%A5%97%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0"><span class="toc-number">7.0.3.</span> <span class="toc-text">在列表中嵌套其他元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AE%B5%E8%90%BD"><span class="toc-number">7.0.3.1.</span> <span class="toc-text">段落</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E5%9D%97"><span class="toc-number">7.0.3.2.</span> <span class="toc-text">引用块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">7.0.3.3.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%89%87"><span class="toc-number">7.0.3.4.</span> <span class="toc-text">图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">7.0.3.5.</span> <span class="toc-text">列表</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Markdown-%E4%BB%A3%E7%A0%81%E8%AF%AD%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">8. Markdown 代码语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%8F%8D%E5%BC%95%E5%8F%B7"><span class="toc-number">8.0.1.</span> <span class="toc-text">转义反引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97-1"><span class="toc-number">8.0.2.</span> <span class="toc-text">代码块</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-Markdown-%E5%88%86%E9%9A%94%E7%BA%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">9.</span> <span class="toc-text">9. Markdown 分隔线语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-Markdown-%E9%93%BE%E6%8E%A5%E8%AF%AD%E6%B3%95"><span class="toc-number">10.</span> <span class="toc-text">10. Markdown 链接语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E5%9D%80%E5%92%8CEmail%E5%9C%B0%E5%9D%80"><span class="toc-number">10.0.1.</span> <span class="toc-text">网址和Email地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%A6%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%9A%84%E9%93%BE%E6%8E%A5"><span class="toc-number">10.0.2.</span> <span class="toc-text">带格式化的链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E9%93%BE%E6%8E%A5"><span class="toc-number">10.0.3.</span> <span class="toc-text">引用类型链接</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-Markdown-%E5%9B%BE%E7%89%87%E8%AF%AD%E6%B3%95"><span class="toc-number">11.</span> <span class="toc-text">11. Markdown 图片语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%9B%BE%E7%89%87"><span class="toc-number">11.0.1.</span> <span class="toc-text">链接图片</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-Markdown-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E8%AF%AD%E6%B3%95"><span class="toc-number">12.</span> <span class="toc-text">12. Markdown 转义字符语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E5%81%9A%E8%BD%AC%E4%B9%89%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="toc-number">12.0.1.</span> <span class="toc-text">可做转义的字符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-Markdown-%E5%86%85%E5%B5%8C-HTML-%E6%A0%87%E7%AD%BE"><span class="toc-number">13.</span> <span class="toc-text">13. Markdown 内嵌 HTML 标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E7%BA%A7%E5%85%A7%E8%81%94%E6%A0%87%E7%AD%BE"><span class="toc-number">13.0.1.</span> <span class="toc-text">行级內联标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%9D%97%E6%A0%87%E7%AD%BE"><span class="toc-number">13.0.2.</span> <span class="toc-text">区块标签</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/24/Markdown%E6%95%99%E7%A8%8B/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="Markdown基本语法"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown基本语法"/></a><div class="content"><a class="title" href="/2022/11/24/Markdown%E6%95%99%E7%A8%8B/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="Markdown基本语法">Markdown基本语法</a><time datetime="2022-11-24T08:05:03.000Z" title="发表于 2022-11-24 16:05:03">2022-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/20/hello-world/" title="Hello World"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/11/20/hello-world/" title="Hello World">Hello World</a><time datetime="2022-11-20T14:37:42.703Z" title="发表于 2022-11-20 22:37:42">2022-11-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 小小水平</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
